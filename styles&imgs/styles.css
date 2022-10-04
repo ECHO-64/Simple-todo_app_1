@@ -1,0 +1,237 @@
+/* _________________ Start Variables _________________ */
+:root {
+  --border-radius: 3px;
+}
+/* _________________ Start Global Rules _________________ */
+@font-face {
+  font-family: "Montserrat";
+  src: url("./font/static/Montserrat-Medium.ttf") format("truetype");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+/* _________________ Start All _________________ */
+.wrapper {
+  height: 100vh;
+}
+.wrapper .todo {
+  background-color: #37474f;
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+  min-height: 100%;
+  padding: 10px;
+  position: relative;
+}
+.wrapper .todo .head {
+  background-color: #546e7a;
+  padding: 13px 10px;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+  position: relative;
+}
+.wrapper .todo .head #tasksInput {
+  height: 45px;
+  font-size: 17px;
+  width: calc(100% - 96px);
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+}
+.wrapper .todo .head #tasksInput::placeholder {
+  color: #555;
+  user-select: none;
+}
+.wrapper .todo .head .add-task {
+  position: absolute;
+  right: 10px;
+  min-width: 90px;
+  min-height: 45px;
+  font-size: 16px;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 7px rgb(0 0 0 / 25%);
+  cursor: pointer;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+  line-height: 1;
+  user-select: none;
+}
+.wrapper .todo .head .add-task:hover {
+  background-color: #008d7f;
+}
+.wrapper .todo .tasks {
+  padding: 10px;
+  margin-top: 5px;
+}
+.wrapper .todo .tasks .task {
+  padding: 10px;
+  height: 80px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  font-size: 15px;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.wrapper .todo .tasks .task:last-child {
+  margin-bottom: 0;
+}
+.wrapper .todo .tasks .task.completed {
+  opacity: 0.6;
+}
+.wrapper .todo .tasks .task.show-history {
+  height: 119px;
+}
+.wrapper .todo .tasks .task .history {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.wrapper .todo .tasks .task .task-name {
+  font-size: 17px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.wrapper .todo .tasks .task .options {
+  font-size: 16px;
+  position: absolute;
+  width: calc(100% - 20px);
+  top: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  z-index: 1;
+}
+.wrapper .todo .tasks .task .options [type="checkbox"] {
+  display: none;
+}
+.wrapper .todo .tasks .task .options [type="checkbox"] + label {
+  user-select: none;
+  padding-left: 22px;
+  position: relative;
+  cursor: pointer;
+  line-height: 1;
+  font-size: 17px;
+}
+.wrapper .todo .tasks .task .options [type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  left: 0;
+  width: 17px;
+  height: 16px;
+  box-shadow: 0 0 0 0.1rem #009688;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+}
+.wrapper .todo .tasks .task .options [type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  left: 3px;
+  width: 11px;
+  height: 11px;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+}
+.wrapper .todo .tasks .task.completed .options label::after {
+  background-color: #009688;
+}
+.wrapper .todo .tasks .task .options .history-caret {
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+  bottom: -3px;
+  color: #009688;
+  width: 25px;
+  text-align: center;
+}
+.wrapper .todo .tasks .task .options .delete {
+  cursor: pointer;
+  color: #fff;
+  background-color: #f44336;
+  padding: 5px 6px;
+  border-radius: var(--border-radius);
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  user-select: none;
+}
+.wrapper .todo .tasks .task .delete:hover {
+  background-color: #cf3428;
+}
+.wrapper .todo .bg {
+  position: absolute;
+  top: 85px;
+  right: 10px;
+  left: 10px;
+  bottom: 10px;
+  background-color: #536d79;
+  border-radius: var(--border-radius);
+}
